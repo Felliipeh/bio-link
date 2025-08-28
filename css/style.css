@@ -1,0 +1,340 @@
+:root {
+  --cor-bg-claro: #f5f6fa;
+  --cor-bg-escuro: #1a1625;
+  --cor-container-claro: #fff;
+  --cor-container-escuro: #23203a;
+  --cor-card: #2d2540;
+  --cor-primaria: #a259e6;
+  --cor-secundaria: #6d28d9;
+  --cor-titulo: #c7a4f7;
+  --cor-texto: #222;
+  --cor-texto-escuro: #fff;
+  --cor-desc: #e0d7f7;
+  --cor-shadow-claro: rgba(120, 72, 182, 0.08);
+  --cor-shadow-escuro: rgba(120, 72, 182, 0.18);
+  --cor-footer: #a259e6;
+  --radius-container: 16px;
+  --radius-modal: 18px;
+  --radius-tags: 12px;
+}
+
+/* Base */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--cor-bg-escuro);
+  color: var(--cor-texto-escuro);
+}
+
+/* Container principal */
+.container {
+  background: var(--cor-container-escuro);
+  border-radius: var(--radius-container);
+  box-shadow: 0 4px 24px var(--cor-shadow-escuro);
+  padding: 48px 36px;
+  /* aumente o padding */
+  max-width: 520px;
+  /* aumente o max-width */
+  width: 100%;
+  text-align: center;
+  margin-top: 48px;
+  margin-bottom: auto;
+  align-self: flex-start;
+  animation: fadeIn 0.8s;
+}
+
+/* Foto de perfil */
+.foto-perfil img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--cor-primaria);
+  margin-bottom: 16px;
+  background: #eee;
+}
+
+/* Títulos */
+h1 {
+  margin: 0;
+  font-size: 1.6rem;
+
+  font-weight: 700;
+}
+
+h2 {
+  margin: 2px 0 8px 0;
+  font-size: 1.1rem;
+  color: var(--cor-primaria);
+  font-weight: 500;
+}
+
+/* Links principais */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--cor-texto-escuro);
+  background: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: transform 0.2s, background 0.2s;
+  box-shadow: 0 2px 8px var(--cor-shadow-claro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.links a:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, var(--cor-secundaria), var(--cor-primaria));
+}
+
+.links i {
+  font-size: 1.2em;
+  color: var(--cor-texto-escuro);
+}
+
+/* Bio */
+.bio {
+  color: var(--cor-texto-escuro);
+  font-size: 0.99rem;
+  margin-bottom: 12px;
+  margin-top: -12px;
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tags span {
+  background: var(--cor-primaria);
+  color: var(--cor-texto-escuro);
+  padding: 4px 12px;
+  border-radius: var(--radius-tags);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Footer */
+.footer {
+  margin-top: 60px;
+  text-align: center;
+  color: var(--cor-footer);
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* Ícones sociais */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin: 12px 0;
+}
+
+.social-icons a {
+  color: var(--cor-primaria);
+  font-size: 1.5rem;
+  transition: color 0.2s;
+}
+
+.social-icons a:hover {
+  color: var(--cor-secundaria);
+}
+
+/* Modo escuro automático */
+body.dark-mode {
+  background: var(--cor-bg-escuro);
+  color: var(--cor-texto-escuro);
+}
+
+body.dark-mode .container {
+  background: var(--cor-container-escuro);
+  box-shadow: 0 4px 24px var(--cor-shadow-escuro);
+}
+
+
+
+body.light-mode {
+  background: var(--cor-bg-claro) !important;
+  color: var(--cor-texto) !important;
+}
+
+body.light-mode .bio {
+  color: var(--cor-secundaria);
+}
+
+body.light-mode .container {
+  background: var(--cor-container-claro) !important;
+}
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode .footer {
+  color: var(--cor-secundaria) !important;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .container {
+    max-width: 95vw;
+    padding: 24px 8px;
+    margin-top: 16px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .foto-perfil img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .links a {
+    font-size: 0.98rem;
+    padding: 20px;
+  }
+
+  .tags span {
+    font-size: 0.8rem;
+    padding: 3px 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 420px;
+    padding: 48px 36px;
+    margin-top: 48px;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px var(--cor-shadow-claro);
+  }
+
+  .foto-perfil img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .links a {
+    font-size: 1.1rem;
+    padding: 14px;
+  }
+
+  .tags span {
+    font-size: 1rem;
+    padding: 6px 16px;
+  }
+}
+
+/* Modal boas-vindas */
+.modal-boasvindas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(44, 34, 68, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-content {
+  background: var(--cor-container-escuro);
+  color: var(--cor-texto-escuro);
+  border-radius: var(--radius-modal);
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 8px 32px var(--cor-shadow-escuro);
+  position: relative;
+  max-width: 340px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 1.6rem;
+  color: var(--cor-primaria);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-modal:hover {
+  color: var(--cor-texto-escuro);
+}
+
+.modal-content h2 {
+  margin: 18px 0 10px 0;
+  color: var(--cor-titulo);
+}
+
+.modal-content p {
+  font-size: 1.05rem;
+  color: var(--cor-desc);
+}
+
+.toggle-theme {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  background: var(--cor-primaria);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 1.3rem;
+  box-shadow: 0 2px 8px rgba(120, 72, 182, 0.10);
+  transition: background 0.2s;
+  z-index: 10;
+}
+
+.toggle-theme:hover {
+  background: var(--cor-secundaria);
+}
